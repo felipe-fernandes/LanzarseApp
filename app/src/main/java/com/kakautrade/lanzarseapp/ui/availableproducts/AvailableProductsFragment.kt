@@ -7,15 +7,14 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import kotlinx.coroutines.flow.onEach
 import com.kakautrade.lanzarseapp.databinding.FragmentAvailableProductsListBinding
 import com.kakautrade.lanzarseapp.ui.availableproducts.adapter.ProductsListAdapter
 import com.kakautrade.lanzarseapp.ui.availableproducts.model.ProductList
 import com.kakautrade.lanzarseapp.ui.availableproducts.viewmodel.ProductsListViewModel
 import com.kakautrade.lanzarseapp.ui.availableproducts.viewmodel.ProductsState
 import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
 
 class AvailableProductsFragment : Fragment() , ProductsListAdapter.OnProductClickListener{
 
