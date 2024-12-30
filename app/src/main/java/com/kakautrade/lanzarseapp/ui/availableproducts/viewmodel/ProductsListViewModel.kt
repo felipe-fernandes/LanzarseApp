@@ -1,7 +1,6 @@
 package com.kakautrade.lanzarseapp.ui.availableproducts.viewmodel
 
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.map
 import androidx.lifecycle.viewModelScope
 import com.kakautrade.lanzarseapp.ui.availableproducts.model.ProductList
 import connectors.produtos.ProdutosConnector
