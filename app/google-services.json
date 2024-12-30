@@ -1,0 +1,121 @@
+{
+  "project_info": {
+    "project_number": "946187539377",
+    "project_id": "sacolapp",
+    "storage_bucket": "sacolapp.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:946187539377:android:bde10e0bc66d0a3bbde390",
+        "android_client_info": {
+          "package_name": "com.example.firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "946187539377-atqutv9pc3rijtrd9j2rp8kiq2s09mpk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.firebase",
+            "certificate_hash": "a67f1d81a0033a0cd8aebe7a0a825f82614a2ec3"
+          }
+        },
+        {
+          "client_id": "946187539377-7rg5kca0j25edm8skfp1jf1vse5ngmc2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvBdwQxmueAalLlwaKbFbigCfnkSzecU8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "946187539377-7rg5kca0j25edm8skfp1jf1vse5ngmc2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:946187539377:android:fe5389b464856f2ebde390",
+        "android_client_info": {
+          "package_name": "com.kakautrade.lanzarseapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "946187539377-kvo9fojgp1lauf764l87429c4g8r6frs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kakautrade.lanzarseapp",
+            "certificate_hash": "a67f1d81a0033a0cd8aebe7a0a825f82614a2ec3"
+          }
+        },
+        {
+          "client_id": "946187539377-7rg5kca0j25edm8skfp1jf1vse5ngmc2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvBdwQxmueAalLlwaKbFbigCfnkSzecU8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "946187539377-7rg5kca0j25edm8skfp1jf1vse5ngmc2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:946187539377:android:b758a281a98879d2bde390",
+        "android_client_info": {
+          "package_name": "com.lanzarse"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "946187539377-knfq3g1onmoco9aoic81fa1bhaocq621.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lanzarse",
+            "certificate_hash": "a67f1d81a0033a0cd8aebe7a0a825f82614a2ec3"
+          }
+        },
+        {
+          "client_id": "946187539377-7rg5kca0j25edm8skfp1jf1vse5ngmc2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvBdwQxmueAalLlwaKbFbigCfnkSzecU8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "946187539377-7rg5kca0j25edm8skfp1jf1vse5ngmc2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
