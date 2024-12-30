@@ -37,13 +37,15 @@ class AvailableProductsFragment : Fragment() {
         productsListViewModel.productsState.onEach { state ->
             when (state) {
                 is ProductsState.Loading -> {
-                    // Show loading indicator
+                    binding.progressBar.visibility = View.VISIBLE // Show ProgressBar
                 }
                 is ProductsState.Success -> {
+                    binding.progressBar.visibility = View.GONE // Hide ProgressBar
                     binding.list.adapter = ProductsListAdapter(state.products)
                 }
                 is ProductsState.Error -> {
-                    // Handle error, e.g., show error message
+                    binding.progressBar.visibility = View.GONE // Hide ProgressBar
+                    // Handle error
                 }
             }
         }.launchIn(viewLifecycleOwner.lifecycleScope)
