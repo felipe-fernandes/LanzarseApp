@@ -7,15 +7,17 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.coroutines.flow.onEach
 import com.kakautrade.lanzarseapp.databinding.FragmentAvailableProductsListBinding
 import com.kakautrade.lanzarseapp.ui.availableproducts.adapter.ProductsListAdapter
+import com.kakautrade.lanzarseapp.ui.availableproducts.model.ProductList
 import com.kakautrade.lanzarseapp.ui.availableproducts.viewmodel.ProductsListViewModel
 import com.kakautrade.lanzarseapp.ui.availableproducts.viewmodel.ProductsState
 import kotlinx.coroutines.flow.launchIn
 
-class AvailableProductsFragment : Fragment() {
+class AvailableProductsFragment : Fragment() , ProductsListAdapter.OnProductClickListener{
 
     private val productsListViewModel: ProductsListViewModel by viewModels()
     private var _binding: FragmentAvailableProductsListBinding? = null
@@ -34,6 +36,9 @@ class AvailableProductsFragment : Fragment() {
 
         binding.list.layoutManager = LinearLayoutManager(context)
 
+        val adapter = ProductsListAdapter(this) // Pass 'this' as the OnProductClickListener
+        binding.list.adapter = adapter
+
         productsListViewModel.productsState.onEach { state ->
             when (state) {
                 is ProductsState.Loading -> {
@@ -41,7 +46,7 @@ class AvailableProductsFragment : Fragment() {
                 }
                 is ProductsState.Success -> {
                     binding.progressBar.visibility = View.GONE // Hide ProgressBar
-                    binding.list.adapter = ProductsListAdapter(state.products)
+                    (binding.list.adapter as ProductsListAdapter).submitList(state.products)
                 }
                 is ProductsState.Error -> {
                     binding.progressBar.visibility = View.GONE // Hide ProgressBar
@@ -54,5 +59,11 @@ class AvailableProductsFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun onProductClick(product: ProductList) {
+        // Handle product click event
+        // e.g., navigate to product detail screen
+
     }
 }
