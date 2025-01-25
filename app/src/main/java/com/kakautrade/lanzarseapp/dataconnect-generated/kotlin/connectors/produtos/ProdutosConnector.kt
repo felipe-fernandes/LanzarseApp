@@ -18,6 +18,8 @@ public interface ProdutosConnector : com.google.firebase.dataconnect.generated.G
   override val dataConnect: com.google.firebase.dataconnect.FirebaseDataConnect
 
   
+    public val agragetedHouseStock: AgragetedHouseStockQuery
+  
     public val createProduto: CreateProdutoMutation
   
     public val distinctProductInfo: DistinctProductInfoQuery
@@ -63,6 +65,10 @@ private class ProdutosConnectorImpl(
   override val dataConnect: com.google.firebase.dataconnect.FirebaseDataConnect
 ) : ProdutosConnector {
   
+    override val agragetedHouseStock by lazy(LazyThreadSafetyMode.PUBLICATION) {
+      AgragetedHouseStockQueryImpl(this)
+    }
+  
     override val createProduto by lazy(LazyThreadSafetyMode.PUBLICATION) {
       CreateProdutoMutationImpl(this)
     }
@@ -90,7 +96,8 @@ private class ProdutosConnectorImpl(
   @com.google.firebase.dataconnect.ExperimentalFirebaseDataConnect
   override fun queries(): List<com.google.firebase.dataconnect.generated.GeneratedQuery<ProdutosConnector, *, *>> =
     listOf(
-      distinctProductInfo,
+      agragetedHouseStock,
+        distinctProductInfo,
         listProdutosDisponiveis,
         
     )
@@ -225,6 +232,21 @@ private open class ProdutosConnectorGeneratedMutationImpl<Data, Variables>(
     "connector=$connector)"
 }
 
+
+
+private class AgragetedHouseStockQueryImpl(
+  connector: ProdutosConnector
+):
+  AgragetedHouseStockQuery,
+  ProdutosConnectorGeneratedQueryImpl<
+      AgragetedHouseStockQuery.Data,
+      Unit
+  >(
+    connector,
+    AgragetedHouseStockQuery.Companion.operationName,
+    AgragetedHouseStockQuery.Companion.dataDeserializer,
+    AgragetedHouseStockQuery.Companion.variablesSerializer,
+  )
 
 
 private class CreateProdutoMutationImpl(

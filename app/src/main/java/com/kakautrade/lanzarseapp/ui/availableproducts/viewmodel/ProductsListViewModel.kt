@@ -21,13 +21,13 @@ class ProductsListViewModel(
     init {
         viewModelScope.launch {
             try {
-                val productsList = produtosConnector.listProdutosDisponiveis.execute().data.productss
-                    .map { productItem ->
+                val productsList = produtosConnector.agragetedHouseStock.execute().data.housestocks
+                    .map { houseStockItem ->
                         ProductList(
-                            idproduto = productItem.idproduto ?: 1,
-                            nome = productItem.nome ?: "",
-                            descricaoproduto = productItem.descricaoproduto ?: "",
-                            foto1 = productItem.foto1 ?: ""
+                            idproduto = houseStockItem.id ?: 1,
+                            nome = houseStockItem.nome ?: "",
+                            descricaoproduto = houseStockItem.descricaoProduto ?: "",
+                            foto1 = houseStockItem.listFoto ?: ""
                         )
                     }
                 _productsState.value = ProductsState.Success(productsList)

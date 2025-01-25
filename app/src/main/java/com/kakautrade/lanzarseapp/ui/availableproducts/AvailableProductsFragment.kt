@@ -41,7 +41,7 @@ class AvailableProductsFragment : Fragment() , ProductsListAdapter.OnProductClic
         productsListViewModel.productsState.onEach { state ->
             when (state) {
                 is ProductsState.Loading -> {
-                    binding.progressBar.visibility = View.VISIBLE // Show ProgressBar
+                    binding.progressBar.visibility = View.VISIBLE // Show ProgressBar///////////////////
                 }
                 is ProductsState.Success -> {
                     binding.progressBar.visibility = View.GONE // Hide ProgressBar
